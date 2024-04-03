@@ -1,5 +1,5 @@
 import { Component, Input, computed, inject, signal } from '@angular/core';
-import { DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { CartItem } from '../cart';
@@ -8,7 +8,7 @@ import { CartService } from '../cart.service';
 @Component({
   selector: 'sw-cart-item',
   standalone: true,
-  imports: [DecimalPipe, FormsModule, NgFor, NgIf],
+  imports: [DecimalPipe, FormsModule],
   templateUrl: './cart-item.component.html'
 })
 export class CartItemComponent {
