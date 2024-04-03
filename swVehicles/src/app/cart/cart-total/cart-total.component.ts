@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { DecimalPipe, NgIf } from '@angular/common';
+import { DecimalPipe } from '@angular/common';
 
 import { CartService } from '../cart.service';
 
 @Component({
   selector: 'sw-cart-total',
   standalone: true,
-  imports: [DecimalPipe, NgIf],
+  imports: [DecimalPipe],
   templateUrl: './cart-total.component.html'
 })
 export class CartTotalComponent {

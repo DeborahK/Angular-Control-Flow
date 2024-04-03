@@ -3,22 +3,26 @@
     {{pageTitle}}
   </div>
 
-  <div class='card-body'
-       *ngIf="vehicles().length">
-
-    <div class="list-group">
-      <button type="button"
-              class="list-group-item"
-              *ngFor="let vehicle of vehicles()"
-              [ngClass]="{'active': vehicle?.name === selectedVehicle()?.name}"
-              (click)="onSelected(vehicle.name)">
-        {{ vehicle.name }}
-      </button>
+  @if (vehicles().length) {
+    <div class='card-body'
+      >
+      <div class="list-group">
+        @for (vehicle of vehicles(); track vehicle) {
+          <button type="button"
+            class="list-group-item"
+            [ngClass]="{'active': vehicle?.name === selectedVehicle()?.name}"
+            (click)="onSelected(vehicle.name)">
+            {{ vehicle.name }}
+          </button>
+        }
+      </div>
     </div>
-  </div>
+  }
 
-  <div class="alert alert-danger"
-       *ngIf="errorMessage">
-    {{errorMessage }}
-  </div>
+  @if (errorMessage) {
+    <div class="alert alert-danger"
+      >
+      {{errorMessage }}
+    </div>
+  }
 </div>

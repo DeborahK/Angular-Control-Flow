@@ -1,11 +1,11 @@
 import { Component, computed, inject } from '@angular/core';
-import { NgFor, NgClass, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { VehicleService } from '../vehicle.service';
 
 @Component({
   selector: 'sw-vehicle-list',
   standalone: true,
-  imports: [NgClass, NgFor, NgIf],
+  imports: [NgClass],
   templateUrl: './vehicle-list.component.html'
 })
 export class VehicleListComponent {
